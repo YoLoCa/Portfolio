@@ -1,0 +1,108 @@
+//Desktop
+@media (min-width: 1200px) {
+    .showcase-text {
+        .display1 {
+            font-size: 6rem;
+        }
+    }
+}
+
+//Mobile/tablet
+@media (max-width: 700px) {
+    #navbar {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .logo {
+            margin-bottom: 2rem;
+        }
+        li {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    .showcase {
+        margin: 0 auto;
+        .showcase-text {
+            width: 35%;
+            text-align: center;
+            .display1 {
+                font-size: 2rem;
+            }
+            .large {
+                font-size: 0.8rem;
+            }
+        }
+
+        .showcase-img {
+            width: 65%;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    #features {
+        padding: 0.8rem 0;
+        flex-direction: column;
+    }
+
+    #skills {
+        padding: 3rem 0 1rem 0;
+        .skills-flex {
+            flex-direction: column;
+        }
+        .skills-item {
+            padding: 1rem;
+        }
+    }
+
+    #work {
+        padding: 2rem 0;
+
+        .work-flex {
+            flex-direction: column;
+
+            &-item {
+                width: 100%;
+            }
+        }
+    }
+
+    .go-top {
+        margin-top: 1rem;
+
+        .up {
+            width: 1.8rem;
+            height: 1.8rem;
+            text-align: center;
+            line-height: 1.4rem;
+            bottom: 0.6rem;
+            right: 0.2rem;
+            i {
+                font-size: 0.9rem;
+                color: $dark-color;
+            }
+        }
+    }
+
+    #contact {
+        h2 {
+            padding: 2rem;
+        }
+
+        form {
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 468px) {
+    .container {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+}

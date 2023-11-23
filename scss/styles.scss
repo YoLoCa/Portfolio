@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap');
+//Variables
+
+$font-stack: 'Montserrat', sans-serif;
+$font-logo: 'Sirin Stencil', sans-serif;
+$primary-color: #e8ca50;
+$dark-color: #000;
+$white-color: #fff;
+$valid-color: #80d765;
+$error-color: #ea4646;
+
+
+//Reset
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//GLOBALES
+
+html,
+body {
+    background-color: $dark-color;
+    color: $white-color;
+    font-family: $font-stack;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+p {
+    font-size: 1rem;
+    margin: 1rem 0;
+    line-height: 1.9em;
+}
+
+a {
+    text-decoration: none;
+    color: $white-color;
+}
+
+li {
+    list-style-type: none;
+    margin: .8rem;
+}
+
+//Main styles
+
+.container {
+    margin: 0 auto;
+    max-width: 95%;
+}
+
+.large {
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    text-align: right;
+
+    &:hover {
+        color: $primary-color;
+        font-weight: 600;
+    }
+}
+
+.display1 {
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    text-transform: uppercase;
+
+    span {
+        display: block;
+        color: $primary-color;
+    }
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 0.7rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 0.5rem;
+
+    &-color {
+        background-color: $primary-color;
+        color: $dark-color;
+        border: none;
+        letter-spacing: 1px;
+    }
+}
+
+//Navbar
+#navbar {
+    padding: 1.8rem 1.8rem;
+    border-bottom: 2px outset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    .logo {
+        font-family: $font-logo;
+        letter-spacing: 0.2rem;
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    li {
+        display: inline-flex;
+
+        &:hover {
+            font-weight: 600;
+        }
+    }
+}
+
+//Mainheader
+.showcase {
+    width: 100%;
+    display: flex;
+
+    .showcase-text {
+        width: 35%;
+        height: 100%;
+        text-align: center;
+        align-self: center;
+    }
+
+    .showcase-img {
+        width: 65%;
+        height: 100%;
+
+        img {
+            width: 80%;
+            height: 100%;
+        }
+    }
+}
+
+//ABOUT
+#about {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+//Features
+#features {
+    padding: 2rem 0;
+    display: flex;
+    p {
+        margin: 0;
+    }
+    .features-box {
+        flex: 1;
+        text-align: center;
+
+        p:first-child {
+            font-size: 4rem;
+            font-weight: 400;
+        }
+
+        p:last-child {
+            color: $primary-color;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+//skills
+#skills {
+    padding: 3rem 0;
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    .skills-flex {
+        display: flex;
+    }
+
+    .skills-item {
+        padding: 1.6rem;
+        text-align: center;
+        flex-basis: 33%;
+    }
+}
+
+// Work
+#work {
+    padding: 3rem 0;
+
+    h2 {
+        padding-bottom: 3rem;
+    }
+
+    .work-flex {
+        display: flex;
+        justify-content: space-between;
+
+        &-item {
+            width: 31%;
+            padding: 1.6rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &-item:hover {
+            padding: 0;
+            transition: padding 0.5s;
+        }
+    }
+}
+
+//Contacto - Formulario
+#contact {
+    h2 {
+        padding: 3rem;
+        color: $primary-color;
+    }
+
+    form {
+        width: 50%;
+        margin: 0 auto;
+
+        label {
+            display: inline-block;
+            margin-bottom: .3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: .7rem 1.2rem;
+            line-height: 1.5rem;
+            border-radius: .5rem;
+
+            &-valid {
+                border: 4px solid $valid-color;
+            }
+
+            &-invalid {
+                border: 4px solid $error-color;
+            }
+        }
+
+        .error {
+            display: none;
+
+            &-activo {
+                display: block;
+                color: $error-color;
+                font-weight: 600;
+            }
+        }
+
+        .form-validar {
+            display: none;
+
+            &-valid {
+                display: block;
+                text-align: center;
+                font-weight: 600;
+                color: $valid-color;
+                padding: 1rem;
+            }
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+}
+
+//Boton subir
+.go-top {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+
+    .up {
+        width: 2.4rem;
+        height: 2.4rem;
+        text-align: center;
+        cursor: pointer;
+        background-color: $primary-color;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 2rem;
+        right: 0.5rem;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $white-color;
+        }
+
+        &-active {
+            opacity: 0;
+        }
+
+        &-inactive {
+            opacity: 1;
+        }
+    }
+}
+
+//FOOTER
+#main-footer {
+    text-align: center;
+
+    p {
+        font-size: .8rem;
+    }
+}
+
+@import 'responsive';
