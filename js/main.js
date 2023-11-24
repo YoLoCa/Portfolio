@@ -77,6 +77,7 @@ const load = () => {
         break;
         }
     }
+    //Validación campos
     const validarCampo = (expresion, input, campo) => {
         if(expresion.test(input.value)){
             document.getElementById(campo).classList.remove('form-control-invalid');
@@ -90,17 +91,26 @@ const load = () => {
             campos[campo] = false;
         }
     }
-        
+    //capturamos eventos de teclado    
     inputs.forEach((input) =>{
         input.addEventListener('keyup', validarFormulario);
         input.addEventListener('blur', validarFormulario);
     });
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
-
+        //validamos que todos los campos son correcto y reseteamos si es true
         if(campos.nombre && campos.email && campos.mensaje){
             formulario.reset();
+            //quitamos bordes verdes validación inputs
+            document.querySelectorAll('.form-control').forEach((inputs)=>{
+                inputs.classList.remove('form-control-valid');
+            });
+            //Añadimos mensaje envio existoso
             document.getElementById('form-validar').classList.add('form-validar-valid');
+            //Eliminamos el mensaje pasados 3s
+            setTimeout(() => {
+                document.getElementById('form-validar').classList.remove('form-validar-valid');
+            }, 3000);
         }else{
             document.getElementById('form-validar').classList.remove('form-validar-valid');            
         }
